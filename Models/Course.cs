@@ -14,6 +14,8 @@ namespace Models
         public double Credit { get; set; }
         public string Description { get; set; }
         public int DepartmentId { get; set; }
+        public Department Department { get; set; }
         public int SemesterId { get; set; }
+        public Semester Semester { get; set; }
     }
 }

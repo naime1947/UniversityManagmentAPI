@@ -59,9 +59,30 @@
     <Compile Include="Migrations\201912261317548_semester and course model created.designer.cs">
       <DependentUpon>201912261317548_semester and course model created.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912261716214_Entity Updated department, course, semester.cs" />
+    <Compile Include="Migrations\201912261716214_Entity Updated department, course, semester.designer.cs">
+      <DependentUpon>201912261716214_Entity Updated department, course, semester.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912261925319_add-migration semesterchanged.cs" />
+    <Compile Include="Migrations\201912261925319_add-migration semesterchanged.designer.cs">
+      <DependentUpon>201912261925319_add-migration semesterchanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912262030226_Department Name property changed.cs" />
+    <Compile Include="Migrations\201912262030226_Department Name property changed.designer.cs">
+      <DependentUpon>201912262030226_Department Name property changed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912262044177_Department Model data annotation added.cs" />
+    <Compile Include="Migrations\201912262044177_Department Model data annotation added.designer.cs">
+      <DependentUpon>201912262044177_Department Model data annotation added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912262058515_Department name string length added.cs" />
+    <Compile Include="Migrations\201912262058515_Department name string length added.designer.cs">
+      <DependentUpon>201912262058515_Department name string length added.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ProjectDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seeds\SemesterInitializerSeed.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -80,7 +101,23 @@
     <EmbeddedResource Include="Migrations\201912261317548_semester and course model created.resx">
       <DependentUpon>201912261317548_semester and course model created.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912261716214_Entity Updated department, course, semester.resx">
+      <DependentUpon>201912261716214_Entity Updated department, course, semester.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912261925319_add-migration semesterchanged.resx">
+      <DependentUpon>201912261925319_add-migration semesterchanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912262030226_Department Name property changed.resx">
+      <DependentUpon>201912262030226_Department Name property changed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912262044177_Department Model data annotation added.resx">
+      <DependentUpon>201912262044177_Department Model data annotation added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912262058515_Department name string length added.resx">
+      <DependentUpon>201912262058515_Department name string length added.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

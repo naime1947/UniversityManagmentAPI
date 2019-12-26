@@ -24,7 +24,10 @@ namespace BLL
 
         public bool SaveDepartment(Department deartment)
         {
-            
+            _db.Departments.Add(deartment);
+            int rowAffected = _db.SaveChanges();
+            if (rowAffected > 0)
+                return true;
             return false;
         }
     }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
+using DAL.Seeds;
 
 namespace DAL
 {
@@ -13,7 +14,7 @@ namespace DAL
     {
         public ProjectDbContext():base("name = UniversityApiDB")
         {
-            
+            Database.SetInitializer<ProjectDbContext>(new SemesterInitializerSeed<ProjectDbContext>());
         }
 
         public DbSet<Department> Departments { get; set; }

@@ -21,7 +21,8 @@ namespace UniversityManagmentAPI.Controllers
         // GET: api/Departments
         public IEnumerable<Department> Get()
         {
-            return _departmentManager.GetAllDepartment();
+            var data = _departmentManager.GetAllDepartment();
+            return data;
         }
 
         // GET: api/Departments/5
@@ -31,8 +32,20 @@ namespace UniversityManagmentAPI.Controllers
         }
 
         // POST: api/Departments
-        public void Post([FromBody]string value)
+        public HttpResponseMessage Post([FromBody]Department department)
         {
+            try
+            {
+
+                _departmentManager.SaveDepartment(department);
+                var message = Request.CreateResponse(HttpStatusCode.Created, department);
+                message.Headers.Location = new Uri(Request.RequestUri + department.DepartmentId.ToString());
+                return message;
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, ex);
+            }
         }
 
         // PUT: api/Departments/5
