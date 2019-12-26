@@ -21,5 +21,11 @@ namespace BLL
         {
            return _db.Departments.ToList();
         }
+
+        public bool SaveDepartment(Department deartment)
+        {
+            
+            return false;
+        }
     }
 }

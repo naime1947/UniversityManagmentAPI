@@ -4,15 +4,24 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using BLL;
+using Models;
 
 namespace UniversityManagmentAPI.Controllers
 {
     public class DepartmentsController : ApiController
     {
-        // GET: api/Departments
-        public IEnumerable<string> Get()
+        private DepartmentManager _departmentManager;
+
+        public DepartmentsController()
         {
-            return new string[] { "value1", "value2" };
+            _departmentManager = new DepartmentManager();
+        }
+
+        // GET: api/Departments
+        public IEnumerable<Department> Get()
+        {
+            return _departmentManager.GetAllDepartment();
         }
 
         // GET: api/Departments/5
