@@ -36,11 +36,18 @@ namespace UniversityManagmentAPI.Controllers
         {
             try
             {
-
-                _departmentManager.SaveDepartment(department);
-                var message = Request.CreateResponse(HttpStatusCode.Created, department);
-                message.Headers.Location = new Uri(Request.RequestUri + department.DepartmentId.ToString());
-                return message;
+                if (ModelState.IsValid)
+                {
+                    _departmentManager.SaveDepartment(department);
+                    var message = Request.CreateResponse(HttpStatusCode.Created, department);
+                    message.Headers.Location = new Uri(Request.RequestUri + department.DepartmentId.ToString());
+                    return message;
+                }
+                else
+                {
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                
             }
             catch (Exception ex)
             {
